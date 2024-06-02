@@ -5,12 +5,15 @@
   <title>Данные с Arduino</title>
 </head>
 <body>
-  <h1>Данные с датчика</h1>
+      <h1 id="app">{{ text }}</h1>
+ <script>
+    var socket = new WebSocket('ws://localhost:8000/ws/some-url/')
 
-  {% if sensorValue %}
-    <p>Значение датчика: {{ sensorValue }}</p>
-  {% else %}
-    <p>Ошибка при чтении данных с Arduino.</p>
-  {% endif %}
+    socket.onmessage = function(event){
+      var data = JSON.parse(event.data)
+      console.log(data)
+      document.querySelector('#app').innerText = data.message
+    }
+ </script>
 </body>
 </html>

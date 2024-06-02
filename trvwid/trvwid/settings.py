@@ -59,6 +59,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'trvwid.wsgi.application'
+ASGI_APPLICATION = 'trvwid.asgi.application'
 
 
 # Database

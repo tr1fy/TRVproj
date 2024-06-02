@@ -6,7 +6,7 @@ import json
 
 def read_arduino_data():
     # Подключение к Arduino
-    ser = serial.Serial('COM3', 9600)  # Замените 'COM3' на порт, к которому подключен Arduino
+    ser = serial.Serial('COM1', 9600)  # Замените 'COM3' на порт, к которому подключен Arduino
 
     # Чтение данных из Arduino
     data = ser.readline().decode('utf-8').strip()
